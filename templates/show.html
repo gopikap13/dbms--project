@@ -1,0 +1,94 @@
+<html>
+<head>
+<style>
+tr:nth-child(even) {background-color: #ffb042;}
+a{
+color:rgb(31, 10, 10);
+background-color:#ffb043;
+padding:5px 15px 5px 15px;
+text-decoration:none;
+border-radius:20px;
+text-align:center;
+display: block;
+width: 120px;
+}
+.login-dark
+{
+background-color:rgb(30,40,51);
+text-align:center;
+padding:20px;
+width:350px;
+height:450px;
+border-radius:5px;
+}
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+</style>
+</head>
+<body style="background-color:white(255, 171, 55)">
+<table border="0" width="100%" height="10%" bgcolor="#000000" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;border-bottom:1px dotted rgb(206, 22, 22);">
+<tr>
+<td style="color:#ffb042;font-size:50px;text-shadow:2px 2px 2px rgb(8, 7, 7)">REGISTRATION LISTS</td>
+<td width="10%" align="center"> <a href="/">Home</a></td>
+<td width="10%" align="center"> <a href="/about">About</a></td>
+<td width="10%" align="center"> <a href="/user">User</a></td>
+<td width="10%" align="center"> <a href="/admin">Admin</a></td>
+<td width="10%" align="center"> <a href="/contacts">Contacts</a></td>
+<!--<td width="10%" align="center"> <a href="admin">Admin</a></td> -->
+</tr>
+</table><br><br><br><br><br><br><br>
+
+<table border="#0000" style="box-shadow:1px 1px 10px rgb(9, 1, 1)" width="70%" height="70%" align="center" style="background-color:#ffb042">
+<tr>
+<td style="background-position:center center" valign="top" align="center">
+ <table border="#000000" cellpadding="8px" width="100%" style="background-color:#cccccc">
+ <tr style="background-color:black;color:rgb(247, 172, 22)">
+    <th>Sno</th>
+    <th>Year</th>
+    <th>Model</th>
+    <th>Color</th>
+    <th>Mileage</th>
+    <th>VIN</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Phone</th>
+    <th>Email</th>
+ </tr>
+  {% for e in data %}
+<tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ e.year }}</td>
+    <td>{{ e.model }}</td>
+    <td>{{ e.color }}</td>
+    <td>{{ e.mileage }}</td>
+    <td>{{ e.vin }}</td>
+    <td>{{ e.name }}</td>
+    <td>{{ e.address }}</td>
+    <td>{{ e.city }}</td>
+    <td>{{ e.state }}</td>
+    <td>{{ e.phone }}</td>
+    <td>{{ e.email }}</td>
+ <!--{% if item.PRO_STATUS == 'Rejected' %}
+       <td style="background-color:red"> {{item.PRO_STATUS  }}</td>
+   {% elif item.PRO_STATUS == 'Accepted' %}
+      <td style="background-color:green"> {{item.PRO_STATUS  }}</td>
+  {% else %}
+      <td style="background-color:yellow"> {{item.PRO_STATUS  }}</td>
+    {% endif %} -->
+ </tr>
+  {% endfor %}
+ </table>
+ 
+ </td>
+</tr>
+<tr style="background-color:black;color:rgb(245, 159, 61);height:25px">
+<td colspan="2"></td>
+</tr>
+</table>
+</body>
+</html>
